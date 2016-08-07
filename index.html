@@ -1,0 +1,200 @@
+<DOCTYPE! html>
+  <!--
+    TODO
+      download images
+      break out documents
+
+  -->
+<html>
+<head>
+  <title>NYR of CSing</title>
+  <META charset="UTF-8">
+  <META name="viewport" content="width=device-width, initial-scale=1.0">
+  <META http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <META
+    name="description"
+    content="_________"
+  >
+  <META
+    name="keywords"
+    content="god, hell, satan, fuck, shit, sex, power, the, love, wealth, happiness"
+  >
+</head>
+
+<body>
+  <img class="fixed" src="http://i2.cdn.turner.com/cnnnext/dam/assets/150903174608-kim-davis-mug-large-169.jpg">
+  <!-- <img class="fading" src="https://s-media-cache-ak0.pinimg.com/736x/e5/2f/bd/e52fbd5d9341a632b9a2a7154a577de3.jpg"> -->
+  <img class="fading" src="https://i.ytimg.com/vi/IHHSnrwTi3k/maxresdefault.jpg">
+  <!-- <img class="fading" src="https://pbs.twimg.com/profile_images/548663225164636160/NkJZRzyj.jpeg"> -->
+  <div style="background-color: rgba(240,240,240,0.2); position:fixed;height:100%;width:100%"></div>
+  <div class="container">
+    <div class="header">
+      <h1 class="d">The New York</h1><br>
+      <h1 class="accent">Review Of</h1><br>
+      <h1 class="d">Cocksucking.<!-- <span>.com</span></h1> -->
+    </div>
+  </div>
+
+</body>
+
+<style type="text/css">
+  /*@import 'https://fonts.googleapis.com/css?family=Lemonada';*/
+  /*@import 'https://fonts.googleapis.com/css?family=Special+Elite';*/
+  @import 'https://fonts.googleapis.com/css?family=Cormorant+Infant';
+  /*@import 'https://fonts.googleapis.com/css?family=Poiret+One';*/
+  /*@import 'https://fonts.googleapis.com/css?family=Yatra+One';*/
+  * { margin: 0; padding: 0 }
+
+  .container {
+
+  }
+
+  .header h1 {
+    /*font-family: 'Lemonada', serif;*/
+    /*font-family: 'Special Elite', serif;*/
+    font-family: 'Cormorant Infant', serif;
+    /*font-family: 'Poiret One', serif;*/
+    /*font-family: 'Yatra One', serif;*/
+    font-size: 120px;
+    color: #492610;
+    text-shadow: 3px 3px 5px #b31;
+    line-height: 1.28;
+    /*text-align: center;*/
+    /*display: block;*/
+    display: inline;
+    padding: 0 0.6em;
+  }
+
+  .header {
+    position: absolute;
+    display: inline;
+    z-index: 9;
+    /*background-color: rgba(240,240,240,0.5);*/
+    /*margin: auto;*/
+    /*width: 500px;*/
+  }
+
+  h1.accent {
+    /*background-color: rgba(240,240,240,0.5);*/
+    /*background-color: rgba(40, 25, 10, 0.3);*/
+    /*background-color: rgba(40, 25, 40, 0.5);*/
+  }
+
+  h1.d {
+
+  }
+
+
+  body {
+    background-color: #444;
+  }
+
+  .fixed {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -7;
+  }
+
+  .fading {
+    z-index: -6;
+    width: 100%;
+    height: 100%;
+    transition: 1.5s ease-in;
+    opacity: 0.3;
+    position: fixed;
+  }
+
+  .wordblock {
+
+  }
+
+  @media (max-width: 815px) {
+    .header {
+      padding: 0.3em;
+    }
+
+    .header h1 {
+      font-size: 80px;
+      padding: 0 0.3em;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .header {
+      padding: 0.3em;
+    }
+
+    .header h1 {
+      font-size: 50px;
+      padding: 0 0.3em;
+    }
+  }
+</style>
+
+<script>
+  // const TIME = 1500;
+
+  const $eyes = [].slice.call(document.getElementsByClassName('fading'))[0];
+
+  setInterval(
+    () => {
+      console.log(1)
+      $eyes.style.opacity = Math.random() * (0.7 - 0.1) + 0.1
+    },
+    1500
+  )
+
+  // let fades = [].slice.call(document.getElementsByClassName('fading'));
+
+  // fades.forEach(fade => fade.style.transition = `${(TIME/1000)/(fades.length-1)}s ease-in`)
+
+
+  // function setStyle(s) {
+  //   const totalH = window.innerHeight;
+  //   const totalW = window.innerWidth;
+
+  //   const width = Math.random();
+  //   const height = Math.random();
+
+  //   s.width = width * 100 + '%';
+  //   s.height = height * 100 + '%';
+
+  //   // s['margin-top'] = totalH * (1 - height) * Math.random();
+  //   // s['margin-left'] = totalW * (1 - width) * Math.random();
+  // }
+
+  // function setZIndex() {
+  //   for (let i = 0; i < fades.length; i++) {
+  //     const style = fades[i].style;
+  //     style['z-index'] = fades.length - i;
+
+  //     // setStyle(style);
+  //   }
+  // }
+
+  // function setOpactiy() {
+  //   for (let i = fades.length; i; i--) {
+  //     if (i === 1) {
+  //       fades[i].style.opacity = 0;
+  //     }
+  //   }
+  // }
+
+  // function reorder() {
+  //   fades.unshift(fades.pop());
+  //   setTimeout(() => fades[0].style.opacity = 1)
+  // }
+
+  // setInterval(
+  //   () => {
+  //     reorder();
+  //     setZIndex();
+  //     setOpactiy();
+  //   },
+  //   TIME / fades.length
+  // );
+
+</script>
+
+</html>
