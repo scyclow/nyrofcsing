@@ -29,9 +29,17 @@
   <div class="filter"></div>
   <div class="container">
     <div class="header">
-      <h1 class="d">The New York</h1><br>
-      <h1 class="accent">Review Of</h1><br>
-      <h1 class="d">Cocksucking<!-- <span>.com</span></h1> -->
+      <h1 class="block">The New York</h1><br>
+      <h1 class="block">Review Of</h1><br>
+      <h1 class="block">Cocksucking<!-- <span>.com</span></h1> -->
+    </div>
+    <div class="content">
+      <div class="text block block-light">
+        Generic text box filled with crap. This is just being used for display purposes. None of this means anything.
+      </div>
+      <div class="demo"></div>
+      <div class="demo"></div>
+      <div class="demo"></div>
     </div>
   </div>
 
@@ -46,15 +54,21 @@
   @import 'https://fonts.googleapis.com/css?family=Great+Vibes';
   @import 'https://fonts.googleapis.com/css?family=Tillana';
   @import 'https://fonts.googleapis.com/css?family=Roboto+Slab';
+  @import 'https://fonts.googleapis.com/css?family=Roboto';
+  @import 'https://fonts.googleapis.com/css?family=Arimo';
   @import 'https://fonts.googleapis.com/css?family=Cormorant+Infant';
 
-  * { margin: 0; padding: 0 }
-
-  .container {
-
+  * {
+    margin: 0;
+    padding: 0
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
   }
 
-  .header h1 {
+  body {
+    background-color: #444;
+    /*font-family: 'Cormorant Infant', serif;*/
     /*font-family: 'Lemonada', serif;*/
     /*font-family: 'Special Elite', serif;*/
     /*font-family: 'Poiret One', serif;*/
@@ -62,29 +76,38 @@
     /*font-family: 'Reem Kufi', serif;*/
     /*font-family: 'Roboto Slab', serif;*/
     /*font-family: 'Great Vibes', serif;*/
-    font-family: 'Tillana', serif;
+    /*font-family: 'Tillana', serif;*/
+    font-family: 'Roboto', serif;
+    /*font-family: 'Arimo', serif;*/
     /*font-family: 'Cormorant Infant', serif;*/
+  }
 
+  .container {
+
+  }
+
+  .header h1 {
     font-size: 120px;
-    /*color: #22d;*/
     /*color: #f59;*/
     /*color: #201009;*/
-    color: #301e09;
-    color: #492610;
-    /*text-shadow: 3px 3px 5px #ba1;*/
-    text-shadow: 3px 3px 5px #f59;
+    /*color: #301e09;*/
+    /*color: #492610;*/
+    color: #181898;
+    text-shadow: 3px 3px 5px #ba1;
+    /*text-shadow: 3px 3px 5px #f59;*/
     /*text-shadow: 3px 3px 5px #89c;*/
     /*text-shadow: 3px 3px 5px #22d;*/
     /*text-shadow: 3px 3px 5px #e31;*/
+    transition: 1.5s;
     line-height: 1.28;
     /*text-align: center;*/
     /*display: block;*/
     display: inline;
-    padding: 0 0.6em;
+    padding: 0.2em 0.6em;
   }
 
   .header {
-    position: absolute;
+    /*position: absolute;*/
     display: inline;
     z-index: 9;
     /*background-color: rgba(240,240,240,0.5);*/
@@ -98,18 +121,19 @@
     /*background-color: rgba(40, 25, 40, 0.5);*/
   }
 
-  h1 {
-    background-color: rgba(0,0,0,0.3);
+  .block {
+    background-color: rgba(0,0,0,0.4);
     border-radius: 3px;
   }
 
-  body {
-    background-color: #444;
+  .block-light {
+    background-color: rgba(240,240,240,0.75);
   }
 
   .filter {
     background-color: rgba(240,240,240,0.1);
     position: fixed;
+    z-index: -1;
     height: 100%;
     width: 100%;
 
@@ -131,29 +155,37 @@
     position: fixed;
   }
 
-  .wordblock {
-
+  .content {
+    width: 100%;
+    z-index: 1;
   }
 
-  @media (max-width: 815px) {
-    .header {
-      padding: 0.3em;
-    }
+  .text {
+    width: 86.5%;
+    margin: 100px auto;
+    font-size: 40px;
+    line-height: 1.2;
+    padding: 1em;
+  }
 
+  .demo {
+    width: 310px;
+    height: 250px;
+    background-color: #333;
+    margin: 100px auto;
+  }
+
+  @media (max-width: 885px) {
     .header h1 {
       font-size: 80px;
-      padding: 0 0.3em;
+      padding: 0.2em 0.3em;
     }
   }
 
-  @media (max-width: 500px) {
-    .header {
-      padding: 0.3em;
-    }
-
+  @media (max-width: 550px) {
     .header h1 {
-      font-size: 50px;
-      padding: 0 0.3em;
+      font-size: 45px;
+      padding: 0.2em 0.3em;
     }
   }
 </style>
@@ -161,15 +193,30 @@
 <script>
   // const TIME = 1500;
 
+  function sample(arr) {
+    const ix = Math.floor( Math.random() * arr.length );
+    return arr[ix];
+  }
+
+  const shadowColors = [
+    '#ba1',
+    // '#f59',
+    '#89c',
+    '#e31',
+  ];
+
   const $eyes = [].slice.call(document.getElementsByClassName('fading'))[0];
+  const $header = [].slice.call(document.querySelectorAll('.header h1'));
 
   setInterval(
     () => {
-      console.log(1)
-      $eyes.style.opacity = Math.random() * (0.7 - 0.1) + 0.1
+      $eyes.style.opacity = Math.random() * (0.7 - 0.1) + 0.1;
+      // const shadow = `3px 3px 5px ${sample(shadowColors)}`;
+      // $header.forEach(h1 => h1.style['text-shadow'] = shadow);
     },
     1500
-  )
+  );
+
 
   // let fades = [].slice.call(document.getElementsByClassName('fading'));
 
